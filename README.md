@@ -8,46 +8,35 @@ The system supports different user roles, ticket categories, temporary ticket re
 
 2. Objectives
 
-- Provide separate access for administrators, organizers, and attendees.
-- Allow organizers to create events and manage ticket quantities.
-- Support VIP and General Admission ticket categories.
-- Prevent multiple users from booking the same available ticket inventory.
-- Implement temporary ticket holds that expire after 10 minutes.
-- Simulate asynchronous payment approval and rejection.
-- Display event revenue and booking conversion analytics.
+1. Provide separate access for administrators, organizers, and attendees.
+2.  Allow organizers to create events and manage ticket quantities.
+3.   Support VIP and General Admission ticket categories.
+4.    Prevent multiple users from booking the same available ticket inventory.
+5.Implement temporary ticket holds that expire after 10 minutes.
+6.Simulate asynchronous payment approval and rejection.
+7.Display event revenue and booking conversion analytics.
 
-3. Technologies Used
-
-Component| Technology
-Frontend| HTML, CSS, JavaScript
-Backend| Node.js, Express.js
-Database| PostgreSQL
-Caching and coordination| Redis
-Authentication| JWT and bcrypt
-API testing| Postman
-Deployment support| Docker
-
-4. User Roles
+3. User Roles
 
 Administrator
 
-- Manage and monitor the platform.
-- View system-level information.
+• Manage and monitor the platform.
+• View system-level information.
 
 Organizer
 
-- Create and update events.
-- Configure ticket categories, prices, quantities, and booking cutoffs.
-- Monitor reservations and revenue.
+• Create and update events.
+• Configure ticket categories, prices, quantities, and booking cutoffs.
+• Monitor reservations and revenue.
 
 Attendee
 
-- Browse available events.
-- Reserve tickets.
-- Complete simulated payments.
-- View booking status.
+• Browse available events.
+• Reserve tickets.
+• Complete simulated payments.
+• View booking status.
 
-5. Main Features
+4. Main Features
 
 1. Role-based authentication and authorization.
 2. Multi-organizer event management.
@@ -60,63 +49,40 @@ Attendee
 9. Revenue and booking conversion analytics.
 10. API documentation and testing using Postman.
 
-6. System Architecture
 
-             Users
-               |
-               v
-      HTML, CSS, JavaScript
-               |
-               v
-        Node.js + Express
-          /           \
-         v             v
-   PostgreSQL         Redis
-         |             |
-         v             v
-  Events, Tickets   Cache and
-  and Reservations  Coordination
-         |
-         v
-  Booking and Payment
-  Processing Services
-         |
-         v
-  Analytics and Reports
-
-7. Database Design
+5. Database Design
 
 The database is designed around the following entities:
 
-- Users: Stores user accounts and roles.
-- Organizations: Stores organizer or tenant information.
-- Events: Stores event details, dates, locations, and booking cutoffs.
-- Ticket Types: Stores ticket categories, prices, and inventory.
-- Orders: Stores reservation and payment status.
-- Order Items: Stores the tickets associated with each order.
+1.Users: Stores user accounts and roles.
+2. Organizations: Stores organizer or tenant information.
+3. Events: Stores event details, dates, locations, and booking cutoffs.
+4. Ticket Types: Stores ticket categories, prices, and inventory.
+5. Orders: Stores reservation and payment status.
+6. Order Items: Stores the tickets associated with each order.
 
 Foreign keys and database constraints help maintain data integrity. Transactions and row-level locking are used when updating ticket inventory.
 
-8. API Overview
+6. API Overview
 
 The application provides API endpoints for:
 
-- Authentication and user registration.
-- Event creation, listing, and management.
-- Ticket reservation and booking holds.
-- Simulated payment processing.
-- Booking status and order history.
-- Revenue and conversion analytics.
+1. Authentication and user registration.
+2. Event creation, listing, and management.
+3. Ticket reservation and booking holds.
+4. Simulated payment processing.
+5. Booking status and order history.
+6. Revenue and conversion analytics.
 
 Refer to the API documentation for endpoint details.
 
-9. Installation and Execution
+7. Installation and Execution
 
 Prerequisites
 
-- Node.js and npm
-- PostgreSQL
-- Redis
+1. Node.js and npm
+2. PostgreSQL
+3. Redis
 
 Setup
 
@@ -129,20 +95,20 @@ Setup
 
 See the project setup instructions for the exact commands and configuration.
 
-10. Expected Outcome
+8. Expected Outcome
 
 The system is intended to provide a structured event reservation platform that supports multiple organizers, manages ticket inventory, simulates payment processing, and provides basic analytics while reducing the risk of duplicate bookings.
 
-11. Future Enhancements
+9. Future Enhancements
 
-- Integration with a real payment gateway.
-- Email and SMS booking notifications.
-- QR-code ticket generation.
-- Advanced analytics dashboards.
-- Cloud deployment and automated CI/CD.
-- Automated concurrency and load testing.
+• Integration with a real payment gateway.
+• Email and SMS booking notifications.
+• QR-code ticket generation.
+• Advanced analytics dashboards.
+• Cloud deployment and automated CI/CD.
+• Automated concurrency and load testing.
 
-12. Conclusion
+10. Conclusion
 
 The Multi-Tenant Event & Ticket Reservation System combines web development, relational database management, caching, authentication, and concurrency control to address common challenges in online event booking.
 
